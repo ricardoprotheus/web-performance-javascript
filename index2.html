@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unique Process</title>
+</head>
+<body>
+    <img src="/img/iron-man-webp" alt="Iron man gif"/>
+    <button id="btn-js">Click Me</button>
+    <h2 id="hello"></h2>
+
+    </h2>
+    <script>
+        const $button = document.getElementById("btn-js");
+        const $hello = document.getElementById("hello");
+
+        $button.addEventListener("click", e => {
+            e.preventDefault();
+            $hello.innerHTML += 'Was clicked <br/>';
+        } );
+
+        /*
+        // Minimal Thread with setTimeout
+        setTimeout(function() {
+
+            for (let i = 0; i < 1000; i++) {
+                document.getElementById('hello').innerHTML += 'I am Iron Man';
+            }
+
+        }, 100);
+        */
+
+        /*
+        // Or
+        // Minimal Thread with requestAnimationFrame of ReactJS with 30 frames by secounds
+        requestAnimationFrame(function() {
+
+            for (let i = 0; i < 1000; i++) {
+                document.getElementById('hello').innerHTML += 'I am Iron Man';
+            }
+
+        });
+        */
+
+        // Or
+        // Minimal Thread with requestIdleCallback case Idle status igual ociosus 
+        // with 100 milesecounds of time
+        // Is a New Function and not supported in Chrome and Firefox and Edge New
+        requestIdleCallback(function() {
+
+        for (let i = 0; i < 1000; i++) {
+            document.getElementById('hello').innerHTML += 'I am Iron Man';
+        }
+
+        }, 100);
+
+    </script>
+</body>
+</html>
